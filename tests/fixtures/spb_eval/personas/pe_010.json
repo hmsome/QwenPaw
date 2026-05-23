@@ -1,0 +1,64 @@
+{
+  "source": "PersonaExt:synthetic_010",
+  "score": 9,
+  "ground_truth": {
+    "demographics": {
+      "name": "Jack"
+    },
+    "background": {
+      "occupation": "game developer"
+    },
+    "interests": {
+      "topics": [
+        "NLP",
+        "transformers"
+      ],
+      "hobbies": [
+        "running",
+        "meditation"
+      ]
+    }
+  },
+  "dialogue_turns": [
+    {
+      "role": "user",
+      "content": "Hi! My name is Jack. Nice to meet you!"
+    },
+    {
+      "role": "assistant",
+      "content": "Nice to meet you too, Jack! How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": "I work as a game developer. I've been doing this for a few years now."
+    },
+    {
+      "role": "assistant",
+      "content": "That's great! A game developer — sounds interesting. What kind of things do you work on?"
+    },
+    {
+      "role": "user",
+      "content": "Outside of work I enjoy running, meditation. I also like reading about NLP."
+    },
+    {
+      "role": "assistant",
+      "content": "Those are some great hobbies! Always good to have a healthy work-life balance."
+    },
+    {
+      "role": "user",
+      "content": "By the way, I'm also interested in transformers."
+    },
+    {
+      "role": "assistant",
+      "content": "I'll keep that in mind!"
+    },
+    {
+      "role": "user",
+      "content": "Thanks, that's helpful!"
+    },
+    {
+      "role": "assistant",
+      "content": "You're welcome! Let me know if you need anything else."
+    }
+  ]
+}

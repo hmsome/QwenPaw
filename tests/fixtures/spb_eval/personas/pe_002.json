@@ -1,0 +1,77 @@
+{
+  "source": "PersonaExt:synthetic_002",
+  "score": 10,
+  "ground_truth": {
+    "demographics": {
+      "name": "Bob"
+    },
+    "background": {
+      "occupation": "data scientist",
+      "expertise_areas": [
+        "design"
+      ],
+      "current_projects": [
+        "project_B"
+      ]
+    },
+    "interests": {
+      "topics": [
+        "web development",
+        "TypeScript"
+      ],
+      "hobbies": [
+        "reading",
+        "cooking"
+      ]
+    },
+    "preferences": {
+      "work_style": "structured",
+      "tools": [
+        "Vim",
+        "Docker"
+      ]
+    }
+  },
+  "dialogue_turns": [
+    {
+      "role": "user",
+      "content": "Hi! My name is Bob. Nice to meet you!"
+    },
+    {
+      "role": "assistant",
+      "content": "Nice to meet you too, Bob! How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": "I work as a data scientist. I've been doing this for a few years now."
+    },
+    {
+      "role": "assistant",
+      "content": "That's great! A data scientist — sounds interesting. What kind of things do you work on?"
+    },
+    {
+      "role": "user",
+      "content": "I mostly work with design. Currently working on project_B."
+    },
+    {
+      "role": "assistant",
+      "content": "Got it! Sounds like you have a solid skill set."
+    },
+    {
+      "role": "user",
+      "content": "Outside of work I enjoy reading, cooking. I also like reading about web development."
+    },
+    {
+      "role": "assistant",
+      "content": "Those are some great hobbies! Always good to have a healthy work-life balance."
+    },
+    {
+      "role": "user",
+      "content": "I prefer a structured approach to work. My go-to tools are Vim and Docker."
+    },
+    {
+      "role": "assistant",
+      "content": "Noted! I'll keep your structured preference in mind."
+    }
+  ]
+}

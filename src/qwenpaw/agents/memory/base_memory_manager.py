@@ -38,6 +38,11 @@ class BaseMemoryManager(ABC):
             tuple[str, list[Msg], dict]
         ] = asyncio.Queue()
         self._worker_task: asyncio.Task | None = None
+        # General-purpose background task pool for parallel pipelines (e.g. SPB)
+        self._bg_task_counter: int = 0
+        self._bg_task_info: dict[str, dict[str, Any]] = {}
+        self._bg_queue: asyncio.Queue[tuple[str, Any, str]] = asyncio.Queue()
+        self._bg_worker_task: asyncio.Task | None = None
 
     @abstractmethod
     async def start(self) -> None:
@@ -231,6 +236,61 @@ class BaseMemoryManager(ABC):
 
         # Enqueue for serial execution
         self._task_queue.put_nowait((task_id, messages, kwargs))
+
+    # ------------------------------------------------------------------
+    # General-purpose background task pool
+    # ------------------------------------------------------------------
+
+    async def _bg_worker(self) -> None:
+        """Background worker that runs arbitrary coroutines serially."""
+        while True:
+            task_id, coro, label = await self._bg_queue.get()
+            info = self._bg_task_info.get(task_id)
+            if info is None:
+                continue
+            info["status"] = "running"
+            logger.debug("Background task %s (%s) started", task_id, label)
+            try:
+                result = await coro
+                info["status"] = "completed"
+                info["result"] = result
+                logger.debug("Background task %s (%s) completed", task_id, label)
+            except asyncio.CancelledError:
+                info["status"] = "cancelled"
+                raise
+            except BaseException as e:
+                info["status"] = "failed"
+                info["error"] = str(e)
+                logger.error("Background task %s (%s) failed: %s", task_id, label, e)
+
+    def add_background_task(self, coro: Any, label: str = "") -> str:
+        """Schedule an arbitrary coroutine as a managed background task.
+
+        Like ``add_summarize_task`` but for general-purpose use (e.g. SPB
+        profile extraction). Tasks run serially in FIFO order.
+
+        Args:
+            coro: An awaitable (coroutine object) to execute.
+            label: Human-readable label for logging.
+
+        Returns:
+            The task ID string.
+        """
+        if self._bg_worker_task is None or self._bg_worker_task.done():
+            self._bg_worker_task = asyncio.create_task(self._bg_worker())
+
+        self._bg_task_counter += 1
+        task_id = f"bg_{self._bg_task_counter}"
+        self._bg_task_info[task_id] = {
+            "task_id": task_id,
+            "start_time": datetime.now(),
+            "status": "pending",
+            "result": None,
+            "error": None,
+            "label": label,
+        }
+        self._bg_queue.put_nowait((task_id, coro, label))
+        return task_id
 
     def _update_task_statuses(self) -> None:
         """Update status for pending/running tasks if worker was cancelled."""

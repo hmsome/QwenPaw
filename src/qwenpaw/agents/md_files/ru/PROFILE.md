@@ -20,11 +20,42 @@ read_when:
 
 *Узнайте больше о человеке, которому вы помогаете. Обновляйте это по мере взаимодействия.*
 
-- **Имя:**
-- **Как к ним обращаться:**
-- **Местоимения:** *(по желанию)*
-- **Заметки:**
+### Основная информация
+<!-- spb:demographics.name:str -->
+- **Имя:** *(ожидает)*
+<!-- spb:demographics.preferred_nickname:str -->
+- **Псевдоним:** *(ожидает)*
+<!-- spb:demographics.pronouns:enum -->
+- **Местоимения:** *(ожидает)*
+<!-- spb:demographics.language_preference:str -->
+- **Язык:** *(ожидает)*
 
 ### Контекст
+<!-- spb:background.occupation:str -->
+- **Род занятий:** *(ожидает)*
+<!-- spb:background.expertise_areas:list -->
+- **Области экспертизы:** *(ожидает)*
+<!-- spb:background.current_projects:list -->
+- **Текущие проекты:** *(ожидает)*
 
-*(Что для них важно? Над какими проектами они работают? Что их раздражает? Что заставляет их смеяться? Собирайте это со временем.)*
+### Общение
+<!-- spb:communication.tone:enum -->
+- **Тон:** *(ожидает)*
+<!-- spb:communication.response_length:enum -->
+- **Длина ответа:** *(ожидает)*
+<!-- spb:communication.output_language:str -->
+- **Язык вывода:** *(ожидает)*
+
+### Интересы
+<!-- spb:interests.topics:list -->
+- **Темы:** *(ожидает)*
+<!-- spb:interests.hobbies:list -->
+- **Хобби:** *(ожидает)*
+
+### Предпочтения
+<!-- spb:preferences.work_style:enum -->
+- **Стиль работы:** *(ожидает)*
+<!-- spb:preferences.decision_style:enum -->
+- **Стиль решений:** *(ожидает)*
+<!-- spb:preferences.tools:list -->
+- **Инструменты:** *(ожидает)*

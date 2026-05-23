@@ -1,0 +1,64 @@
+{
+  "source": "PersonaExt:synthetic_014",
+  "score": 9,
+  "ground_truth": {
+    "demographics": {
+      "name": "Nick"
+    },
+    "background": {
+      "occupation": "embedded systems engineer"
+    },
+    "interests": {
+      "topics": [
+        "open source",
+        "Linux"
+      ],
+      "hobbies": [
+        "painting",
+        "yoga"
+      ]
+    }
+  },
+  "dialogue_turns": [
+    {
+      "role": "user",
+      "content": "Hi! My name is Nick. Nice to meet you!"
+    },
+    {
+      "role": "assistant",
+      "content": "Nice to meet you too, Nick! How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": "I work as a embedded systems engineer. I've been doing this for a few years now."
+    },
+    {
+      "role": "assistant",
+      "content": "That's great! A embedded systems engineer — sounds interesting. What kind of things do you work on?"
+    },
+    {
+      "role": "user",
+      "content": "Outside of work I enjoy painting, yoga. I also like reading about open source."
+    },
+    {
+      "role": "assistant",
+      "content": "Those are some great hobbies! Always good to have a healthy work-life balance."
+    },
+    {
+      "role": "user",
+      "content": "By the way, I'm also interested in Linux."
+    },
+    {
+      "role": "assistant",
+      "content": "I'll keep that in mind!"
+    },
+    {
+      "role": "user",
+      "content": "Thanks, that's helpful!"
+    },
+    {
+      "role": "assistant",
+      "content": "You're welcome! Let me know if you need anything else."
+    }
+  ]
+}

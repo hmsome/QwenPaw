@@ -1,0 +1,67 @@
+{
+  "source": "PersonaExt:synthetic_008",
+  "score": 10,
+  "ground_truth": {
+    "demographics": {
+      "name": "Henry"
+    },
+    "background": {
+      "occupation": "security analyst",
+      "expertise_areas": [
+        "design"
+      ]
+    },
+    "interests": {
+      "topics": [
+        "mobile apps",
+        "Flutter"
+      ],
+      "hobbies": [
+        "surfing",
+        "diving"
+      ]
+    }
+  },
+  "dialogue_turns": [
+    {
+      "role": "user",
+      "content": "Hi! My name is Henry. Nice to meet you!"
+    },
+    {
+      "role": "assistant",
+      "content": "Nice to meet you too, Henry! How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": "I work as a security analyst. I've been doing this for a few years now."
+    },
+    {
+      "role": "assistant",
+      "content": "That's great! A security analyst — sounds interesting. What kind of things do you work on?"
+    },
+    {
+      "role": "user",
+      "content": "I mostly work with design. "
+    },
+    {
+      "role": "assistant",
+      "content": "Got it! Sounds like you have a solid skill set."
+    },
+    {
+      "role": "user",
+      "content": "Outside of work I enjoy surfing, diving. I also like reading about mobile apps."
+    },
+    {
+      "role": "assistant",
+      "content": "Those are some great hobbies! Always good to have a healthy work-life balance."
+    },
+    {
+      "role": "user",
+      "content": "By the way, I'm also interested in Flutter."
+    },
+    {
+      "role": "assistant",
+      "content": "I'll keep that in mind!"
+    }
+  ]
+}

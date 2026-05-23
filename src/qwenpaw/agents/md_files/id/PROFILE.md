@@ -15,15 +15,47 @@ read_when:
 - **Other:**
   _Konten lain yang ditetapkan pengguna_
 
+
 ## User Profile
 
 _Pelajari orang yang kamu bantu. Perbarui bagian ini seiring waktu._
 
-- **Name:**
-- **What to call them:**
-- **Pronouns:** _(opsional)_
-- **Notes:**
+### Basic Information
+<!-- spb:demographics.name:str -->
+- **Name:** *(pending)*
+<!-- spb:demographics.preferred_nickname:str -->
+- **Nickname:** *(pending)*
+<!-- spb:demographics.pronouns:enum -->
+- **Pronouns:** *(pending)*
+<!-- spb:demographics.language_preference:str -->
+- **Language:** *(pending)*
 
-### Context
+### Background
+<!-- spb:background.occupation:str -->
+- **Occupation:** *(pending)*
+<!-- spb:background.expertise_areas:list -->
+- **Expertise Areas:** *(pending)*
+<!-- spb:background.current_projects:list -->
+- **Current Projects:** *(pending)*
 
-_(Apa yang mereka pedulikan? Proyek apa yang sedang dikerjakan? Apa yang mengganggu mereka? Apa yang membuat mereka tertawa? Bangun konteks ini seiring waktu.)_
+### Communication
+<!-- spb:communication.tone:enum -->
+- **Tone:** *(pending)*
+<!-- spb:communication.response_length:enum -->
+- **Response Length:** *(pending)*
+<!-- spb:communication.output_language:str -->
+- **Output Language:** *(pending)*
+
+### Interests
+<!-- spb:interests.topics:list -->
+- **Topics:** *(pending)*
+<!-- spb:interests.hobbies:list -->
+- **Hobbies:** *(pending)*
+
+### Preferences
+<!-- spb:preferences.work_style:enum -->
+- **Work Style:** *(pending)*
+<!-- spb:preferences.decision_style:enum -->
+- **Decision Style:** *(pending)*
+<!-- spb:preferences.tools:list -->
+- **Tools:** *(pending)*

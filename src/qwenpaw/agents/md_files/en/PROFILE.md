@@ -20,11 +20,42 @@ read_when:
 
 *Learn about the person you're helping. Update this as you go.*
 
-- **Name:**
-- **What to call them:**
-- **Pronouns:** *(optional)*
-- **Notes:**
+### Basic Information
+<!-- spb:demographics.name:str -->
+- **Name:** *(pending)*
+<!-- spb:demographics.preferred_nickname:str -->
+- **Nickname:** *(pending)*
+<!-- spb:demographics.pronouns:enum -->
+- **Pronouns:** *(pending)*
+<!-- spb:demographics.language_preference:str -->
+- **Language:** *(pending)*
 
-### Context
+### Background
+<!-- spb:background.occupation:str -->
+- **Occupation:** *(pending)*
+<!-- spb:background.expertise_areas:list -->
+- **Expertise Areas:** *(pending)*
+<!-- spb:background.current_projects:list -->
+- **Current Projects:** *(pending)*
 
-*(What do they care about? What projects are they working on? What annoys them? What makes them laugh? Build this over time.)*
+### Communication
+<!-- spb:communication.tone:enum -->
+- **Tone:** *(pending)*
+<!-- spb:communication.response_length:enum -->
+- **Response Length:** *(pending)*
+<!-- spb:communication.output_language:str -->
+- **Output Language:** *(pending)*
+
+### Interests
+<!-- spb:interests.topics:list -->
+- **Topics:** *(pending)*
+<!-- spb:interests.hobbies:list -->
+- **Hobbies:** *(pending)*
+
+### Preferences
+<!-- spb:preferences.work_style:enum -->
+- **Work Style:** *(pending)*
+<!-- spb:preferences.decision_style:enum -->
+- **Decision Style:** *(pending)*
+<!-- spb:preferences.tools:list -->
+- **Tools:** *(pending)*

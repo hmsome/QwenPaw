@@ -1,0 +1,57 @@
+{
+  "source": "PersonaExt:synthetic_018",
+  "score": 7,
+  "ground_truth": {
+    "demographics": {
+      "name": "Rachel"
+    },
+    "interests": {
+      "topics": [
+        "mobile apps",
+        "Flutter"
+      ]
+    }
+  },
+  "dialogue_turns": [
+    {
+      "role": "user",
+      "content": "Hi! My name is Rachel. Nice to meet you!"
+    },
+    {
+      "role": "assistant",
+      "content": "Nice to meet you too, Rachel! How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": "By the way, I'm also interested in Flutter."
+    },
+    {
+      "role": "assistant",
+      "content": "I'll keep that in mind!"
+    },
+    {
+      "role": "user",
+      "content": "Thanks, that's helpful!"
+    },
+    {
+      "role": "assistant",
+      "content": "You're welcome! Let me know if you need anything else."
+    },
+    {
+      "role": "user",
+      "content": "Thanks, that's helpful!"
+    },
+    {
+      "role": "assistant",
+      "content": "You're welcome! Let me know if you need anything else."
+    },
+    {
+      "role": "user",
+      "content": "Thanks, that's helpful!"
+    },
+    {
+      "role": "assistant",
+      "content": "You're welcome! Let me know if you need anything else."
+    }
+  ]
+}

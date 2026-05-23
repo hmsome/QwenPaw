@@ -1,0 +1,49 @@
+{
+  "source": "PersonaExt:synthetic_020",
+  "score": 2,
+  "ground_truth": {
+    "demographics": {}
+  },
+  "dialogue_turns": [
+    {
+      "role": "user",
+      "content": "Hi! My name is friend. Nice to meet you!"
+    },
+    {
+      "role": "assistant",
+      "content": "Nice to meet you too, friend! How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": "Thanks, that's helpful!"
+    },
+    {
+      "role": "assistant",
+      "content": "You're welcome! Let me know if you need anything else."
+    },
+    {
+      "role": "user",
+      "content": "Thanks, that's helpful!"
+    },
+    {
+      "role": "assistant",
+      "content": "You're welcome! Let me know if you need anything else."
+    },
+    {
+      "role": "user",
+      "content": "Thanks, that's helpful!"
+    },
+    {
+      "role": "assistant",
+      "content": "You're welcome! Let me know if you need anything else."
+    },
+    {
+      "role": "user",
+      "content": "Thanks, that's helpful!"
+    },
+    {
+      "role": "assistant",
+      "content": "You're welcome! Let me know if you need anything else."
+    }
+  ]
+}

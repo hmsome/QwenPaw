@@ -217,6 +217,14 @@ class PromptBuilder:
             logger.warning("No content loaded from working directory")
             return DEFAULT_SYS_PROMPT
 
+        # Append profile-aware directives if PROFILE.md has filled SPB fields
+        directives = self._build_profile_directives()
+        if directives:
+            self.prompt_parts.append("")
+            self.prompt_parts.append("# Behavioral Directives")
+            self.prompt_parts.append("")
+            self.prompt_parts.append(directives)
+
         # Join all parts with double newlines
         final_prompt = "\n\n".join(self.prompt_parts)
 
@@ -227,6 +235,57 @@ class PromptBuilder:
         )
 
         return final_prompt
+
+    def _build_profile_directives(self) -> str:
+        """Generate behavioral directives from filled SPB profile fields.
+
+        Only reads fields inside the `## User Profile` / `## 用户资料`
+        section — never reads from the `## Identity` / `## 身份` section.
+        """
+        profile_path = self.working_dir / "PROFILE.md"
+        if not profile_path.exists():
+            return ""
+
+        try:
+            from .memory.spb.spb_profile_writer import SPBProfileWriter
+            from .memory.spb.spb_types import SPB_SCHEMA
+
+            writer = SPBProfileWriter()
+            markers = writer.parse_markers(profile_path)
+        except Exception:
+            return ""
+
+        directives = []
+        for dim in SPB_SCHEMA:
+            for f in dim.fields:
+                key = f"{dim.name}.{f.key}"
+                info = markers.get(key)
+                if not info or not info["filled"]:
+                    continue
+                value = info["value"]
+                directive = self._field_to_directive(f.key, value)
+                if directive:
+                    directives.append(f"- {directive}")
+
+        return "\n".join(directives)
+
+    @staticmethod
+    def _field_to_directive(field_key: str, value: str) -> str:
+        """Convert a filled profile field to a behavioral directive."""
+        mapping = {
+            "name": f"Address the user as {value}",
+            "preferred_nickname": f"Call the user {value}",
+            "pronouns": f"Use {value} pronouns when referring to the user",
+            "language_preference": f"Communicate in {value}",
+            "output_language": f"Respond in {value}",
+            "tone": f"Use a {value} tone in responses",
+            "response_length": (
+                f"Provide {'brief, concise' if value == 'concise' else 'detailed, thorough'} responses"
+            ),
+            "work_style": f"Adopt a {value} approach to tasks",
+            "decision_style": f"Use an {value} decision-making style",
+        }
+        return mapping.get(field_key, f"Note: user's {field_key} is {value}")
 
 
 def build_system_prompt_from_working_dir(

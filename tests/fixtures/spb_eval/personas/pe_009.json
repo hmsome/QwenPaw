@@ -1,0 +1,64 @@
+{
+  "source": "PersonaExt:synthetic_009",
+  "score": 9,
+  "ground_truth": {
+    "demographics": {
+      "name": "Iris"
+    },
+    "background": {
+      "occupation": "technical writer"
+    },
+    "interests": {
+      "topics": [
+        "distributed systems",
+        "Rust"
+      ],
+      "hobbies": [
+        "knitting",
+        "writing"
+      ]
+    }
+  },
+  "dialogue_turns": [
+    {
+      "role": "user",
+      "content": "Hi! My name is Iris. Nice to meet you!"
+    },
+    {
+      "role": "assistant",
+      "content": "Nice to meet you too, Iris! How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": "I work as a technical writer. I've been doing this for a few years now."
+    },
+    {
+      "role": "assistant",
+      "content": "That's great! A technical writer — sounds interesting. What kind of things do you work on?"
+    },
+    {
+      "role": "user",
+      "content": "Outside of work I enjoy knitting, writing. I also like reading about distributed systems."
+    },
+    {
+      "role": "assistant",
+      "content": "Those are some great hobbies! Always good to have a healthy work-life balance."
+    },
+    {
+      "role": "user",
+      "content": "By the way, I'm also interested in Rust."
+    },
+    {
+      "role": "assistant",
+      "content": "I'll keep that in mind!"
+    },
+    {
+      "role": "user",
+      "content": "Thanks, that's helpful!"
+    },
+    {
+      "role": "assistant",
+      "content": "You're welcome! Let me know if you need anything else."
+    }
+  ]
+}

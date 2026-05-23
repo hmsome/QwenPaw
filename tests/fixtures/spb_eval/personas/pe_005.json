@@ -1,0 +1,77 @@
+{
+  "source": "PersonaExt:synthetic_005",
+  "score": 10,
+  "ground_truth": {
+    "demographics": {
+      "name": "Eve"
+    },
+    "background": {
+      "occupation": "DevOps engineer",
+      "expertise_areas": [
+        "design"
+      ],
+      "current_projects": [
+        "project_E"
+      ]
+    },
+    "interests": {
+      "topics": [
+        "AI ethics",
+        "philosophy"
+      ],
+      "hobbies": [
+        "rock climbing",
+        "cycling"
+      ]
+    },
+    "preferences": {
+      "work_style": "structured",
+      "tools": [
+        "Figma",
+        "Sketch"
+      ]
+    }
+  },
+  "dialogue_turns": [
+    {
+      "role": "user",
+      "content": "Hi! My name is Eve. Nice to meet you!"
+    },
+    {
+      "role": "assistant",
+      "content": "Nice to meet you too, Eve! How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": "I work as a DevOps engineer. I've been doing this for a few years now."
+    },
+    {
+      "role": "assistant",
+      "content": "That's great! A DevOps engineer — sounds interesting. What kind of things do you work on?"
+    },
+    {
+      "role": "user",
+      "content": "I mostly work with design. Currently working on project_E."
+    },
+    {
+      "role": "assistant",
+      "content": "Got it! Sounds like you have a solid skill set."
+    },
+    {
+      "role": "user",
+      "content": "Outside of work I enjoy rock climbing, cycling. I also like reading about AI ethics."
+    },
+    {
+      "role": "assistant",
+      "content": "Those are some great hobbies! Always good to have a healthy work-life balance."
+    },
+    {
+      "role": "user",
+      "content": "I prefer a structured approach to work. My go-to tools are Figma and Sketch."
+    },
+    {
+      "role": "assistant",
+      "content": "Noted! I'll keep your structured preference in mind."
+    }
+  ]
+}

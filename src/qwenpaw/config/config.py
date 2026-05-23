@@ -659,6 +659,54 @@ class ReMeLightMemoryConfig(BaseModel):
     )
 
 
+class SPBConfig(BaseModel):
+    """Structured Profile Bootstrapping (SPB) configuration."""
+
+    model_config = ConfigDict(extra="ignore")
+
+    enabled: bool = Field(
+        default=True,
+        description="Whether SPB profile extraction is enabled",
+    )
+
+    pre_check_keywords_zh: List[str] = Field(
+        default_factory=lambda: ["我是", "我叫", "喜欢", "偏好", "习惯", "讨厌"],
+        description="Chinese keywords triggering Layer 1 pre-check",
+    )
+    pre_check_keywords_en: List[str] = Field(
+        default_factory=lambda: [
+            "i am", "i'm", "call me", "like", "prefer", "hate",
+        ],
+        description="English keywords triggering Layer 1 pre-check",
+    )
+    pre_check_use_llm_fallback: bool = Field(
+        default=True,
+        description="Use lightweight LLM call when keywords miss",
+    )
+
+    empty_streak_threshold: int = Field(
+        default=3,
+        ge=1,
+        description="K consecutive empty extractions before permanent stop",
+    )
+
+    enable_user_override: bool = Field(
+        default=True,
+        description="Detect and apply explicit user self-declarations",
+    )
+
+    max_retries: int = Field(
+        default=1,
+        ge=0,
+        description="Max retries for extraction LLM calls",
+    )
+
+    dimensions: List[str] = Field(
+        default_factory=list,
+        description="Empty = all 5 dimensions; otherwise restrict to listed names",
+    )
+
+
 class ContextCompactConfig(BaseModel):
     """Context compaction configuration."""
 
@@ -989,6 +1037,12 @@ class AgentsRunningConfig(BaseModel):
 
     reme_light_memory_config: ReMeLightMemoryConfig = Field(
         default_factory=ReMeLightMemoryConfig,
+    )
+
+    spb_config: Optional[SPBConfig] = Field(
+        default=None,
+        description="Structured Profile Bootstrapping configuration. "
+        "None means disabled.",
     )
 
     daily_memory_dir: str = Field(

@@ -1,0 +1,64 @@
+{
+  "source": "PersonaExt:synthetic_011",
+  "score": 9,
+  "ground_truth": {
+    "demographics": {
+      "name": "Karen"
+    },
+    "background": {
+      "occupation": "database administrator"
+    },
+    "interests": {
+      "topics": [
+        "machine learning",
+        "Python"
+      ],
+      "hobbies": [
+        "hiking",
+        "photography"
+      ]
+    }
+  },
+  "dialogue_turns": [
+    {
+      "role": "user",
+      "content": "Hi! My name is Karen. Nice to meet you!"
+    },
+    {
+      "role": "assistant",
+      "content": "Nice to meet you too, Karen! How can I help you today?"
+    },
+    {
+      "role": "user",
+      "content": "I work as a database administrator. I've been doing this for a few years now."
+    },
+    {
+      "role": "assistant",
+      "content": "That's great! A database administrator — sounds interesting. What kind of things do you work on?"
+    },
+    {
+      "role": "user",
+      "content": "Outside of work I enjoy hiking, photography. I also like reading about machine learning."
+    },
+    {
+      "role": "assistant",
+      "content": "Those are some great hobbies! Always good to have a healthy work-life balance."
+    },
+    {
+      "role": "user",
+      "content": "By the way, I'm also interested in Python."
+    },
+    {
+      "role": "assistant",
+      "content": "I'll keep that in mind!"
+    },
+    {
+      "role": "user",
+      "content": "Thanks, that's helpful!"
+    },
+    {
+      "role": "assistant",
+      "content": "You're welcome! Let me know if you need anything else."
+    }
+  ]
+}

@@ -65,10 +65,25 @@ class LightContextManager(BaseContextManager):
             agent_id: Agent ID for config loading.
         """
         super().__init__(working_dir=working_dir, agent_id=agent_id)
+        self._spb_adapter = self._init_spb_adapter(agent_id, working_dir)
         logger.info(
             f"LightContextManager init: "
             f"agent_id={agent_id}, working_dir={working_dir}",
         )
+
+    @staticmethod
+    def _init_spb_adapter(agent_id: str, working_dir: str):
+        """Initialize SPB adapter from agent config if enabled."""
+        try:
+            agent_config = load_agent_config(agent_id)
+            spb_cfg = agent_config.running.spb_config
+            if spb_cfg and spb_cfg.enabled:
+                from ..memory.spb import SPBAdapter
+
+                return SPBAdapter(spb_cfg, agent_id, working_dir)
+        except Exception as e:
+            logger.debug("SPB adapter init skipped: %s", e)
+        return None
 
     # ------------------------------------------------------------------
     # BaseContextManager interface
@@ -980,6 +995,9 @@ class LightContextManager(BaseContextManager):
 
         When ``auto_memory_interval`` is set (e.g., 2), this hook counts user
         messages in the memory and triggers auto memory every N queries.
+
+        SPB profile extraction runs in parallel via the memory manager's
+        task pool when enabled.
         """
         try:
             memory_manager = agent.memory_manager
@@ -993,6 +1011,22 @@ class LightContextManager(BaseContextManager):
                 await memory_manager.auto_memory(
                     all_messages=all_messages,
                 )
+
+                # SPB: parallel profile extraction
+                if self._spb_adapter and not self._spb_adapter.stopped:
+                    try:
+                        latest_user_msg = self._spb_adapter._get_latest_user_text(
+                            all_messages,
+                        )
+                        if latest_user_msg and await self._spb_adapter.should_extract(
+                            latest_user_msg,
+                        ):
+                            memory_manager.add_background_task(
+                                self._spb_adapter.run(all_messages),
+                                label="spb_extract",
+                            )
+                    except Exception as e:
+                        logger.debug("SPB post_reply hook skipped: %s", e)
         except Exception as e:
             logger.warning("post_reply hook failed: %s", e)
 

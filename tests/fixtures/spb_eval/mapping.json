@@ -1,0 +1,84 @@
+{
+    "predicate_mapping": {
+        "have_profession": {
+            "target_dimension": "background",
+            "target_field": "occupation",
+            "field_type": "str"
+        },
+        "have_hobby": {
+            "target_dimension": "interests",
+            "target_field": "hobbies",
+            "field_type": "list"
+        },
+        "like_to_do": {
+            "target_dimension": "interests",
+            "target_field": "hobbies",
+            "field_type": "list"
+        },
+        "like": {
+            "target_dimension": "interests",
+            "target_field": "topics",
+            "field_type": "list"
+        },
+        "favorite": {
+            "target_dimension": "interests",
+            "target_field": "topics",
+            "field_type": "list"
+        },
+        "favorite_color": {
+            "target_dimension": "interests",
+            "target_field": "topics",
+            "field_type": "list"
+        },
+        "favorite_animal": {
+            "target_dimension": "interests",
+            "target_field": "topics",
+            "field_type": "list"
+        },
+        "favorite_food": {
+            "target_dimension": "interests",
+            "target_field": "topics",
+            "field_type": "list"
+        },
+        "favorite_music": {
+            "target_dimension": "interests",
+            "target_field": "topics",
+            "field_type": "list"
+        },
+        "favorite_movie": {
+            "target_dimension": "interests",
+            "target_field": "topics",
+            "field_type": "list"
+        },
+        "favorite_book": {
+            "target_dimension": "interests",
+            "target_field": "topics",
+            "field_type": "list"
+        },
+        "favorite_sport": {
+            "target_dimension": "interests",
+            "target_field": "topics",
+            "field_type": "list"
+        },
+        "have": {
+            "target_dimension": "preferences",
+            "target_field": "tools",
+            "field_type": "list",
+            "note": "Only map when object is tool/device/software related"
+        },
+        "own": {
+            "target_dimension": "preferences",
+            "target_field": "tools",
+            "field_type": "list",
+            "note": "Only map when object is tool/device/software related"
+        }
+    },
+    "excluded_predicates": [
+        "own_pet",
+        "live_in",
+        "have_pet",
+        "be_from",
+        "have_age",
+        "have_gender"
+    ]
+}

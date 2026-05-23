@@ -10,6 +10,9 @@ from .adbpg_memory_manager import (
     ADBPGMemoryManager,
 )  # registers "adbpg" backend
 
+# SPB — Structured Profile Bootstrapping
+from .spb import SPBAdapter, SPBDimension, SPBField
+
 # Proactive symbols are lazily re-exported via __getattr__ at runtime to
 # avoid circular imports (proactive -> react_agent -> agents.memory loop).
 # The TYPE_CHECKING block below satisfies static analysis tools (pylint, mypy).
@@ -32,6 +35,10 @@ __all__ = [
     "BaseMemoryManager",
     "ReMeLightMemoryManager",
     "ADBPGMemoryManager",
+    # SPB
+    "SPBAdapter",
+    "SPBDimension",
+    "SPBField",
     # proactive symbols resolved lazily at runtime via __getattr__
     "ProactiveConfig",
     "ProactiveTask",
